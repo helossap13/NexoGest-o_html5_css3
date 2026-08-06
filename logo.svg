@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="44" height="44" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Logotipo NexoGestão</title>
+  <defs>
+    <linearGradient id="logoGradiente" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1E40AF" />
+    </linearGradient>
+  </defs>
+  <polygon points="32,2 59,17 59,47 32,62 5,47 5,17" fill="url(#logoGradiente)" />
+  <path d="M20 22 L20 42 L25 42 L25 30 L37 42 L44 42 L44 22 L39 22 L39 34 L27 22 Z" fill="#FFFFFF" />
+</svg>

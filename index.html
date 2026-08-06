@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexoGestão | Cadastro de Clientes</title>
+  <meta name="description" content="Sistema de gestão para cadastro e consulta de clientes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="header">
+    <div class="header__container">
+      <a href="#inicio" class="header__brand">
+        
+        <span class="header__title">
+          Nexo<strong>Gestão</strong>
+        </span>
+      </a>
+
+      <button class="header__toggle" id="menuToggle" aria-expanded="false" aria-controls="menuPrincipal" aria-label="Abrir menu de navegação">
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+
+      <nav class="nav" id="menuPrincipal" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Início</a></li>
+          <li><a class="nav__link" href="#cadastro">Cadastro</a></li>
+          <li><a class="nav__link" href="#clientes">Clientes</a></li>
+          <li><a class="nav__link" href="#clientes">Relatórios</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
+  <main id="conteudo">
+
+    <!-- Introdução do sistema -->
+    <section id="inicio" class="hero" aria-labelledby="heroTitulo">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Painel administrativo</p>
+        <h1 id="heroTitulo">Gestão de clientes em um único lugar</h1>
+        <p class="hero__descricao">
+          Cadastre novos clientes, mantenha os dados atualizados e acompanhe a base
+          completa em uma interface simples, acessível e responsiva.
+        </p>
+        <div class="hero__stats" role="list">
+          <div class="hero__stat" role="listitem">
+            <span class="hero__stat-numero">10</span>
+            <span class="hero__stat-label">Clientes ativos na base</span>
+          </div>
+          <div class="hero__stat" role="listitem">
+            <span class="hero__stat-numero">100%</span>
+            <span class="hero__stat-label">Formulário acessível</span>
+          </div>
+          <div class="hero__stat" role="listitem">
+            <span class="hero__stat-numero">3</span>
+            <span class="hero__stat-label">Tamanhos de tela suportados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SEÇÃO 1: CADASTRO DE CLIENTE ===================== -->
+    <section id="cadastro" class="secao secao--cadastro" aria-labelledby="cadastroTitulo">
+      <div class="secao__cabecalho">
+        <p class="secao__eyebrow">Formulário</p>
+        <h2 id="cadastroTitulo">Cadastro de cliente</h2>
+        <p class="secao__descricao">Preencha os campos abaixo para registrar um novo cliente na base.</p>
+      </div>
+
+      <form class="formulario" id="formCadastro" novalidate>
+
+        <fieldset class="formulario__grupo">
+          <legend class="formulario__legenda">Dados pessoais</legend>
+
+          <div class="campo campo--largo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex.: Ana Beatriz Souza" required minlength="3" autocomplete="name">
+          </div>
+
+          <div class="campo">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" inputmode="numeric" title="Formato esperado: 000.000.000-00">
+          </div>
+
+          <div class="campo">
+            <label for="nascimento">Data de nascimento</label>
+            <input type="date" id="nascimento" name="nascimento" required>
+          </div>
+
+          <div class="campo">
+            <label for="sexo">Sexo</label>
+            <select id="sexo" name="sexo" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="feminino">Feminino</option>
+              <option value="masculino">Masculino</option>
+              <option value="outro">Outro</option>
+              <option value="nao-informar">Prefiro não informar</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="formulario__grupo">
+          <legend class="formulario__legenda">Contato</legend>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="[email protected]" required autocomplete="email">
+          </div>
+
+          <div class="campo">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required pattern="\(\d{2}\)\s\d{4,5}-\d{4}" autocomplete="tel">
+          </div>
+        </fieldset>
+
+        <fieldset class="formulario__grupo">
+          <legend class="formulario__legenda">Endereço</legend>
+
+          <div class="campo campo--largo">
+            <label for="endereco">Endereço</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Rua, número e complemento" required autocomplete="street-address">
+          </div>
+
+          <div class="campo">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Ex.: São Paulo" required autocomplete="address-level2">
+          </div>
+
+          <div class="campo">
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado" required autocomplete="address-level1">
+              <option value="" disabled selected>Selecione</option>
+              <option value="SP">São Paulo</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PR">Paraná</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="BA">Bahia</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" required pattern="\d{5}-\d{3}" inputmode="numeric" autocomplete="postal-code">
+          </div>
+        </fieldset>
+
+        <div class="campo campo--largo campo--checkbox">
+          <input type="checkbox" id="termos" name="termos" required>
+          <label for="termos">Li e aceito os termos de uso e a política de privacidade.</label>
+        </div>
+
+        <p class="formulario__status" id="statusFormulario" role="status" aria-live="polite"></p>
+
+        <div class="formulario__acoes">
+          <button type="submit" class="botao botao--primario">Salvar</button>
+          <button type="reset" class="botao botao--secundario">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===================== SEÇÃO 2: CLIENTES CADASTRADOS ===================== -->
+    <section id="clientes" class="secao secao--clientes" aria-labelledby="clientesTitulo">
+      <div class="secao__cabecalho">
+        <p class="secao__eyebrow">Base de dados</p>
+        <h2 id="clientesTitulo">Clientes cadastrados</h2>
+        <p class="secao__descricao">Consulte os clientes já registrados no sistema.</p>
+      </div>
+
+      <div class="tabela-wrapper">
+        <table class="tabela">
+          <caption class="tabela__legenda">Lista dos clientes cadastrados no sistema, com dados de contato e status.</caption>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome</th>
+              <th scope="col">CPF</th>
+              <th scope="col">Cidade</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-rotulo="ID">01</td>
+              <td data-rotulo="Nome">Ana Beatriz Souza</td>
+              <td data-rotulo="CPF">123.456.789-01</td>
+              <td data-rotulo="Cidade">São Paulo</td>
+              <td data-rotulo="Telefone">(11) 98765-4321</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--ativo">Ativo</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">02</td>
+              <td data-rotulo="Nome">Carlos Eduardo Lima</td>
+              <td data-rotulo="CPF">234.567.890-12</td>
+              <td data-rotulo="Cidade">Campinas</td>
+              <td data-rotulo="Telefone">(19) 99876-5432</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--ativo">Ativo</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">03</td>
+              <td data-rotulo="Nome">Fernanda Oliveira</td>
+              <td data-rotulo="CPF">345.678.901-23</td>
+              <td data-rotulo="Cidade">Belo Horizonte</td>
+              <td data-rotulo="Telefone">(31) 98765-1234</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--inativo">Inativo</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">04</td>
+              <td data-rotulo="Nome">Gustavo Ramos</td>
+              <td data-rotulo="CPF">456.789.012-34</td>
+              <td data-rotulo="Cidade">Curitiba</td>
+              <td data-rotulo="Telefone">(41) 99123-4567</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--ativo">Ativo</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">05</td>
+              <td data-rotulo="Nome">Helena Martins</td>
+              <td data-rotulo="CPF">567.890.123-45</td>
+              <td data-rotulo="Cidade">Porto Alegre</td>
+              <td data-rotulo="Telefone">(51) 98234-5678</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--pendente">Pendente</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">06</td>
+              <td data-rotulo="Nome">Igor Almeida</td>
+              <td data-rotulo="CPF">678.901.234-56</td>
+              <td data-rotulo="Cidade">Salvador</td>
+              <td data-rotulo="Telefone">(71) 99345-6789</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--ativo">Ativo</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">07</td>
+              <td data-rotulo="Nome">Juliana Castro</td>
+              <td data-rotulo="CPF">789.012.345-67</td>
+              <td data-rotulo="Cidade">Recife</td>
+              <td data-rotulo="Telefone">(81) 98456-7890</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--ativo">Ativo</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">08</td>
+              <td data-rotulo="Nome">Lucas Ferreira</td>
+              <td data-rotulo="CPF">890.123.456-78</td>
+              <td data-rotulo="Cidade">Florianópolis</td>
+              <td data-rotulo="Telefone">(48) 99567-8901</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--inativo">Inativo</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">09</td>
+              <td data-rotulo="Nome">Mariana Costa</td>
+              <td data-rotulo="CPF">901.234.567-89</td>
+              <td data-rotulo="Cidade">Fortaleza</td>
+              <td data-rotulo="Telefone">(85) 98678-9012</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--ativo">Ativo</span></td>
+            </tr>
+            <tr>
+              <td data-rotulo="ID">10</td>
+              <td data-rotulo="Nome">Rafael Nogueira</td>
+              <td data-rotulo="CPF">012.345.678-90</td>
+              <td data-rotulo="Cidade">Brasília</td>
+              <td data-rotulo="Telefone">(61) 99789-0123</td>
+              <td data-rotulo="E-mail">[email protected]</td>
+              <td data-rotulo="Status"><span class="status status--ativo">Ativo</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="footer" id="contato">
+    <div class="footer__container">
+      <div class="footer__bloco">
+        <p class="footer__instituicao">Universidade Federal Exemplo</p>
+        <p>Disciplina: Desenvolvimento Web Front-end</p>
+        <p>Semestre: 2026/2</p>
+      </div>
+      <div class="footer__bloco">
+        <p class="footer__autor">Projeto acadêmico desenvolvido por João da Silva</p>
+        <p>Sistema fictício criado para fins didáticos.</p>
+      </div>
+    </div>
+    <p class="footer__copy">&copy; 2026 NexoGestão. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
