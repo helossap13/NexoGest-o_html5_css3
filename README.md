@@ -119,7 +119,4 @@ pontos de quebra:
 - Hierarquia de títulos respeitada (`h1` único na página, `h2` para cada
   seção principal).
 
-## Autor
 
-Projeto acadêmico desenvolvido por João da Silva (autor fictício), para a
-disciplina de Desenvolvimento Web Front-end.
