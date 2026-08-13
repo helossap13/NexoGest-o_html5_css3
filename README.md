@@ -18,6 +18,29 @@ apenas para duas interações pontuais: abrir/fechar o menu no celular e exibir
 uma mensagem de confirmação ao salvar o formulário — não há frameworks nem
 dependências.
 
+## Funcionalidades implementadas
+
+- validação JavaScript antes do envio;
+- mensagens de erro específicas em cada campo;
+- validação de CPF com dígitos verificadores;
+- validação de data de nascimento, bloqueando datas futuras;
+- validação de e-mail;
+- validação de telefone;
+- validação de endereço, cidade e estado;
+- validação de CEP;
+- validação dos termos de uso;
+- máscaras de CPF, telefone e CEP;
+- validação por eventos `input`, `blur` e `change`;
+- manipulação do DOM;
+- `event.preventDefault()` no envio;
+- consulta assíncrona com `fetch`;
+- `async/await`;
+- API ViaCEP;
+- preenchimento automático de endereço, cidade e estado;
+- tratamento de CEP inexistente;
+- tratamento de erro de conexão;
+- menu mobile preservado.
+
 ## Tecnologias utilizadas
 
 - **HTML5** — estrutura semântica da página.
@@ -27,21 +50,6 @@ dependências.
   formulário, sem frameworks ou bibliotecas.
 - **Google Fonts** (Poppins e Inter) — carregadas via `<link>`, sem impacto no
   restante do código.
-
-## Estrutura de pastas
-
-```
-Projeto/
-│── index.html
-│── css/
-│      style.css
-│── js/
-│      script.js
-│── imagens/
-│      logo.svg
-│── README.md
-│── relatorio.md
-```
 
 > **Nota sobre o logotipo:** o briefing original previa `imagens/logo.png`.
 > Como o logotipo é fictício e não há uma imagem real a ser usada, ele foi
