@@ -658,3 +658,51 @@ select:focus-visible {
     border-radius: var(--raio-borda-pequeno);
   }
 }
+
+
+
+.campo--erro input,
+.campo--erro select {
+  border-color: var(--cor-erro);
+  box-shadow: 0 0 0 3px var(--cor-erro-fundo);
+}
+
+.campo--erro input:focus,
+.campo--erro select:focus {
+  border-color: var(--cor-erro);
+  box-shadow: 0 0 0 3px var(--cor-erro-fundo);
+}
+
+
+/* ================================================================
+   VALIDAÇÃO JAVASCRIPT — MENSAGENS POR CAMPO
+   ================================================================ */
+.campo__erro-mensagem {
+  display: block;
+  min-height: 0;
+  margin: 0.35rem 0 0;
+  color: var(--cor-erro);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.campo__erro-mensagem:empty {
+  display: none;
+}
+
+.campo--erro input,
+.campo--erro select {
+  border-color: var(--cor-erro) !important;
+  box-shadow: 0 0 0 3px var(--cor-erro-fundo) !important;
+}
+
+.campo--erro input:focus,
+.campo--erro select:focus {
+  border-color: var(--cor-erro) !important;
+  box-shadow: 0 0 0 3px var(--cor-erro-fundo) !important;
+}
+
+.formulario__status {
+  min-height: 1.5rem;
+}
